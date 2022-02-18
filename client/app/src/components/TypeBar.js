@@ -11,8 +11,8 @@ const TypeBar = observer(() => {
     <ListGroup>
       {toy.types.map((type) => (
         <ListGroup.Item
-          onClick={() => toy.setSelectedType(type)}
           key={type.id}
+          onClick={() => toy.setSelectedType(type)}
           active={type.id == toy.selectedType.id}
         >
           {type.name}

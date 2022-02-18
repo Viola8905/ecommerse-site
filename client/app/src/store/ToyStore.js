@@ -6,7 +6,7 @@ export default class ToyStore {
 
 
   constructor() {
-		this._selectedType = {};
+	
     this._types = [
       { id: 1, name: "Toys for Girls" },
       { id: 2, name: "Toys for Boys" },
@@ -54,7 +54,7 @@ export default class ToyStore {
         img: "https://target.scene7.com/is/image/Target/GUEST_d8988f0b-6d17-43e7-81e4-beeb9daf78a9?wid=488&hei=488&fmt=pjpeg",
       },
     ];
-		
+		this._selectedType = {};
     makeAutoObservable(this);
   }
 
@@ -81,7 +81,7 @@ export default class ToyStore {
   get toys() {
     return this._toys;
   }
-	get setSelectedType(){
+	get selectedType(){
 		return this._selectedType;
 	}
 }
