@@ -1,0 +1,25 @@
+import { observer } from "mobx-react-lite";
+import React, { useContext } from "react";
+import { Context } from "..";
+import { ListGroup } from "react-bootstrap";
+import Col from "react-bootstrap/Col";
+
+const TypeBar = observer(() => {
+  const { toy } = useContext(Context);
+
+  return (
+    <ListGroup>
+      {toy.types.map((type) => (
+        <ListGroup.Item
+          onClick={() => toy.setSelectedType(type)}
+          key={type.id}
+          active={type.id == toy.selectedType.id}
+        >
+          {type.name}
+        </ListGroup.Item>
+      ))}
+    </ListGroup>
+  );
+});
+
+export default TypeBar;
