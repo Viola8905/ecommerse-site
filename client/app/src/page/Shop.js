@@ -11,7 +11,7 @@ const Shop = () => {
         <Col md={3}>
 					<TypeBar/>
 				</Col>
-        <Col md={9}>
+        <Col md={9}  style={{}}>
 					<BrandBar/>
 					<ToyList/>
 				</Col>

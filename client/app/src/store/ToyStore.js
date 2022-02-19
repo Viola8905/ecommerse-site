@@ -50,6 +50,27 @@ export default class ToyStore {
         rating: 5,
         img: "https://target.scene7.com/is/image/Target/GUEST_d8988f0b-6d17-43e7-81e4-beeb9daf78a9?wid=488&hei=488&fmt=pjpeg",
       },
+      {
+        id: 6,
+        name: "Blond Barbie",
+        price: 6000,
+        rating: 5,
+        img: "https://target.scene7.com/is/image/Target/GUEST_d8988f0b-6d17-43e7-81e4-beeb9daf78a9?wid=488&hei=488&fmt=pjpeg",
+      },
+      {
+        id: 7,
+        name: "Blond Barbie",
+        price: 7000,
+        rating: 5,
+        img: "https://target.scene7.com/is/image/Target/GUEST_d8988f0b-6d17-43e7-81e4-beeb9daf78a9?wid=488&hei=488&fmt=pjpeg",
+      },
+      {
+        id: 8,
+        name: "Blond Barbie",
+        price: 8000,
+        rating: 5,
+        img: "https://target.scene7.com/is/image/Target/GUEST_d8988f0b-6d17-43e7-81e4-beeb9daf78a9?wid=488&hei=488&fmt=pjpeg",
+      },
     ];
     this._selectedType = {};
     this._selectedBrand = {};

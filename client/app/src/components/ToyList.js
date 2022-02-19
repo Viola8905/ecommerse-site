@@ -6,7 +6,7 @@ import ToyItem from './ToyItem'
 const ToyList = observer(() => {
 	const {toy} = useContext(Context)
 	return ( 
-		<div  style={{display:'flex'}}>
+		<div  style={{display:'flex', flexWrap:'wrap'}}>
 				{toy.toys.map(toy => 
 					<ToyItem key={toy.id} toy={toy} />
 					)}
