@@ -6,7 +6,7 @@ import { Context } from "..";
 const BrandBar = observer(() => {
   const { toy } = useContext(Context);
   return (
-    <Row className="d-flex">
+    <div style = {{display: 'flex'}}>
       {toy.brands.map((brand) => (
         <Card
           style={{ cursor: "pointer" }}
@@ -18,7 +18,7 @@ const BrandBar = observer(() => {
           {brand.name}
         </Card>
       ))}
-    </Row>
+    </div>
   );
 });
 

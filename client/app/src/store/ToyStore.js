@@ -11,8 +11,8 @@ export default class ToyStore {
     this._brands = [
       { id: 1, name: "Baby's pleasure" },
       { id: 2, name: "Baby Shark" },
-      { id: 3, name: "Baby Shark" },
-      { id: 4, name: "Baby Shark" },
+      { id: 3, name: "Bebivita" },
+      { id: 4, name: "Johnson" },
     ];
     this._toys = [
       {
