@@ -16,11 +16,9 @@ code {
 
 
 
-body {
-  background: #fff;
-}
 
-.container {
+
+/* .container {
   display: flex;
   flex-direction: column;
   position: relative;
@@ -30,7 +28,7 @@ body {
   margin: 100px auto 0;
   word-break: break-all;
   border: 1px solid rgba(0, 0, 0, 0.274);
-}
+} */
 
 .bloc-tabs {
   display: flex;
