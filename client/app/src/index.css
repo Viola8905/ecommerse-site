@@ -32,6 +32,7 @@ code {
 
 .bloc-tabs {
   display: flex;
+	margin-top: 50px;
 }
 .tabs {
 

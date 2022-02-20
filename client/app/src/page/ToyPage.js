@@ -4,8 +4,8 @@ import { Button, Card, Col, Container, Image, Row } from "react-bootstrap";
 const ToyPage = () => {
 
 	const [toggleState, setToggleState] = useState(1);
-	const toggleTab = () => {
-		console.log('hello')
+	const toggleTab = (index) => {
+		setToggleState(index)
 	}
   const toy = {
     id: 1,
@@ -57,14 +57,23 @@ const ToyPage = () => {
               </Card>
             </div>
           </div>
-
-					//tabs//
+         {/* Tabs */}
           <div className="bloc-tabs">
-            <div className="tabs active-tabs "  onClick={() => toggleTab(1)}>Description</div>
-            <div className="tabs ">Delivery</div>
+            <div
+              className={toggleState === 1 ? "tabs active-tabs" : "tabs"}
+              onClick={() => toggleTab(1)}
+            >
+              Description
+            </div>
+            <div
+              className={toggleState === 2 ? "tabs active-tabs" : "tabs"}
+              onClick={() => toggleTab(2)}
+            >
+              Delivery
+            </div>
           </div>
           <div className="content-tabs">
-            <div className="content active-content">
+            <div className={toggleState === 1 ? "content active-content" : "content"}>
               <h2>Content1</h2>
               <hr />
               <p>
@@ -74,7 +83,7 @@ const ToyPage = () => {
                 repellendus, sint sunt.
               </p>
             </div>
-            <div className="content">
+            <div className={toggleState === 2 ? "content active-content" : "content"}>
               <h2>Content2</h2>
               <hr />
               <p>
