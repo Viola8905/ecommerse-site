@@ -35,7 +35,7 @@ const NavBar = observer (() => {
                 className="ml-2"
                 onClick={() => navigate(LOGIN_ROUTE)}
               >
-                Выйти
+                Вoйти
               </Button>
             </Nav>
           ) : (

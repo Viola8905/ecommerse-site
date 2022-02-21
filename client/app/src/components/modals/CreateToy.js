@@ -1,8 +1,15 @@
-import React, { useContext } from 'react'
-import { Button, Dropdown, Form, Modal } from "react-bootstrap";
+import React, { useContext, useState } from 'react'
+import { Button, Col, Dropdown, Form, Modal, Row } from "react-bootstrap";
 import { Context } from '../..';
 const CreateToy = ({show, onHide}) => {
-	const {toy} = useContext(Context)
+	const {toy} = useContext(Context);
+	const [info, setInfo] = useState([]);
+	const addInfo =() =>{
+		setInfo([...info, {title:'', description:'',number: Date.now()}])
+	}
+	const removeInfo = (number) => {
+				setInfo(info.filter(i => i.number !== number));
+	}
 	return (
     <Modal size="lg" centered show={show} onHide={onHide}>
       <Modal.Header closeButton>
@@ -29,10 +36,30 @@ const CreateToy = ({show, onHide}) => {
             </Dropdown.Menu>
           </Dropdown>
           <Form.Control placeholder="Enter name of the toy" className="mt-3" />
-          <Form.Control placeholder="Enter price of the toy" className="mt-3"  type='number'/>
-          <Form.Control  className="mt-3" type='file' />
-					<hr/>
-
+          <Form.Control
+            placeholder="Enter price of the toy"
+            className="mt-3"
+            type="number"
+          />
+          <Form.Control className="mt-3" type="file" />
+          <hr />
+          <Button variant={"outline-dark"} onClick={addInfo}>
+            Add a new property
+          </Button>
+          {info.map((i) => (
+            <Row className='mt-4' key={i.number}>
+              <Col md={4}>
+                <Form.Control placeholder="Enter name of the property" />
+              </Col>
+              <Col md={4}>
+                <Form.Control placeholder="Enter description of the property" />
+              </Col>
+              <Col md={4}>
+								<Button variant={'outline-danger'} onClick={() => removeInfo(i.number)}>Delete</Button>
+               
+              </Col>
+            </Row>
+          ))}
         </Form>
       </Modal.Body>
       <Modal.Footer>
