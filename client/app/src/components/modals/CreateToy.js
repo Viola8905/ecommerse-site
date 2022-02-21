@@ -1,6 +1,8 @@
-import React from 'react'
-import { Button, Form, Modal } from "react-bootstrap";
+import React, { useContext } from 'react'
+import { Button, Dropdown, Form, Modal } from "react-bootstrap";
+import { Context } from '../..';
 const CreateToy = ({show, onHide}) => {
+	const {toy} = useContext(Context)
 	return (
     <Modal size="lg" centered show={show} onHide={onHide}>
       <Modal.Header closeButton>
@@ -10,7 +12,27 @@ const CreateToy = ({show, onHide}) => {
       </Modal.Header>
       <Modal.Body>
         <Form>
-          <Form.Control placeholder={"enter name of the type"} />
+          <Dropdown className="mt-2 mb-2">
+            <Dropdown.Toggle>Choose a type</Dropdown.Toggle>
+            <Dropdown.Menu>
+              {toy.types.map((type) => (
+                <Dropdown.Item key={type.id}>{type.name}</Dropdown.Item>
+              ))}
+            </Dropdown.Menu>
+          </Dropdown>
+          <Dropdown className="mt-2 mb-2">
+            <Dropdown.Toggle>Choose a brand</Dropdown.Toggle>
+            <Dropdown.Menu>
+              {toy.brands.map((brand) => (
+                <Dropdown.Item key={brand.id}>{brand.name}</Dropdown.Item>
+              ))}
+            </Dropdown.Menu>
+          </Dropdown>
+          <Form.Control placeholder="Enter name of the toy" className="mt-3" />
+          <Form.Control placeholder="Enter price of the toy" className="mt-3"  type='number'/>
+          <Form.Control  className="mt-3" type='file' />
+					<hr/>
+
         </Form>
       </Modal.Body>
       <Modal.Footer>
