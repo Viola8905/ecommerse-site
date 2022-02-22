@@ -28,7 +28,7 @@ const NavBar = observer (() => {
                 variant={"outline-light"}
                 onClick={() => navigate(ADMIN_ROUTE)}
               >
-                Админ панель
+                Админ панел
               </Button>
               <Button
                 variant={"outline-light"}
